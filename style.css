@@ -72,3 +72,29 @@ body{
     height: auto;
     display: block;
 }
+#seld{
+    min-height: 100vh;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+#seld h4{
+    font-size: 45px;
+    font-weight: 100;
+    max-width: 100vw;
+    margin: 0 auto 100px;
+}
+#seld h5{
+    font-size: 30px;
+    font-weight: 100;
+    max-width: 100vw;
+    margin: 0 auto 100px;
+}
+#seld h6{
+    font-size: 20px;
+    font-weight: 100;
+    max-width: 100vw;
+    margin: 0 auto 100px;
+}
+#gallery{}
