@@ -9,14 +9,16 @@ body{
     color: #e3caab;
 }
 h1{
+
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-weight: 100;
-    font-size: 120px;
-    z-index: 1;
+    font-size: 120px;   
+    position: relative;
+    z-index: 3; 
 }
 #wave{
     position: fixed;
