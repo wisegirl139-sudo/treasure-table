@@ -9,11 +9,11 @@ body{
     color: #e3caab;
 }
 h1{
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 80;
+    font-weight: 100;
     font-size: 120px;
 }
