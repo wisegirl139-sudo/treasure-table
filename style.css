@@ -54,10 +54,9 @@ body{
     flex-direction: column;
 }
 #oo p{
-    font-family: "Cormorant Unicase", serif;
-    font-weight: 300;
+    font-weight: 100;
     margin: 0;
-    text-shadow: #2d1902 2px 2px 2px;
+    text-shadow: #2d1902 1px 2px 2px;
 }
 #wave{
     position: fixed;
