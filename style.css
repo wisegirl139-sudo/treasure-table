@@ -22,7 +22,7 @@ h1{
 }
 #wave{
     position: fixed;
-    top: -1500px;
+    transform: translateY(-80%);
     left: 0;
     width: 100%;
     height:auto;
@@ -31,4 +31,5 @@ h1{
 #wave img{
     width: 100%;
     height: auto;
+    display: block;
 }
