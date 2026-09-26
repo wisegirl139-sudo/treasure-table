@@ -2,9 +2,9 @@ let wave =document.getElementById("wave");
 let st=-window.innerHeight*0.8;
 wave.style.top="20vh";
 window.addEventListener("scroll",function(){
-    let pos=20+window.scrollY/window.innerHeight*100;
-    if(pos>150){
-        pos=100;
+    let pos=-95+window.scrollY/5;
+    if(pos>0){
+        pos=0;
     };
-    wave.style.top=pos+"vh";
+    wave.style.transform=translateY("pos+"%)";
 });
