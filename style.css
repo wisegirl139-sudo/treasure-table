@@ -142,3 +142,13 @@ body{
     inset 0 0 0 6px #a87532,
     2px 2px 0px #2d1902;
 }
+@media(max-width:600px){
+    #wave img{
+        width: 180%;
+        max-width: none;
+        
+    }
+    #wave{
+        transform: translateY(-80%);
+    }
+}
