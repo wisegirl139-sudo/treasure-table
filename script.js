@@ -51,7 +51,7 @@ let ft=["1.png","2.png","3.png"];
 img.addEventListener("load",function(){
     let ww=img.offsetWidth;
     let hh=img.offsetHeight;
-    for(let y=80; y<hh-80;y+=gy){
+    for(let y=80; y<hh-180;y+=gy){
         let row=Math.floor(y/gy);
         for (let x=20;x<ww;x+=gx){
             let f=document.createElement("img");
@@ -72,6 +72,7 @@ img.addEventListener("load",function(){
             });
         }
     }
+    swim();
 });
 //fishies move
 function swim(){
@@ -84,4 +85,3 @@ function swim(){
     });
     requestAnimationFrame(swim);
 }
-swim();
