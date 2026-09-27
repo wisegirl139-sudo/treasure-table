@@ -169,6 +169,11 @@ body{
 button{
     position: relative;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px auto;
 }
 #scr{
     display: none;
