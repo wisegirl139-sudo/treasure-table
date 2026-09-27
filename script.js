@@ -38,18 +38,50 @@ less.addEventListener("click",function(){
     scr.style.display="none";
 })
 //fih timee
+let wh=document.getElementById("wave");
+let img=wh.querySelector("img");
+
+
 let fih=document.getElementById("fih");
-let img=document.querySelector("#wave img");
-
-function sizeFish(){
-    fih.style.height=img.offsetHeight+"px";
+let fs=[];
+let fw=45;
+let gx=35;
+let gy=35;
+let ft=["1.png","2.png","3.png"];
+img.addEventListener("load",function(){
+    let ww=img.offsetWidth;
+    let hh=img.offsetHeight;
+    for(let y=80; y<hh-80;y+=gy){
+        let row=Math.floor(y/gy);
+        for (let x=20;x<ww;x+=gx){
+            let f=document.createElement("img");
+            f.src=ft[Math.floor(Math.random()*ft.length)];
+            f.className="fishh";
+            let xx=x;
+            if(row %2 ==1){
+                xx+=gx/2;
+            };
+            f.style.left=xx+"px";
+            f.style.top=y+"px";
+            fih.appendChild(f);
+            fs.push({
+                el:f,
+                x:xx,
+                y:y,
+                sp:0.3+Math.random()*0.8
+            });
+        }
+    }
+});
+//fishies move
+function swim(){
+    fs.forEach(function(f){
+        f.x+=f.sp;
+        if(f.x>fih.offsetWidth){
+            f.x=-50;
+        }
+        f.el.style.left=f.x+"px";
+    });
+    requestAnimationFrame(swim);
 }
-
-if(img.complete){
-    sizeFish();
-}
-else{
-    img.addEventListener("load",sizeFish);
-}
-
-window.addEventListener("resize",sizeFish);
+swim();

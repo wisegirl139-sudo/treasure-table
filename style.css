@@ -293,33 +293,27 @@ button{
 }
 
 
-#wave{
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    z-index:0;
-}
-
-#wave img{
-    width:100%;
-    height:auto;
-    display:block;
-}
-
 #fih{
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:500px;
-    z-index:5;
-    pointer-events:none;
-    overflow:hidden;
-}
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
 
+}
 .fishh{
-    position:absolute;
-    width:20px !important;
+    position: absolute;
+    width: 35px !important;
     height:auto !important;
+}
+.fishh:nth-child(1){
+    left: 15%;
+    top: 80%;
+}
+.fishh:nth-child(2){
+    left: 40%;
+    top: 130px;
+}
+.fishh:nth-child(3){
+    left: 65%;
+    top: 80px;
 }
