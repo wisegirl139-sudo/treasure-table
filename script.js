@@ -41,27 +41,28 @@ less.addEventListener("click",function(){
 let fih=document.getElementById("fih");
 let fs=[];
 let fw=45;
-let gx=90;
-let gy=70;
+let gx=50;
+let gy=45;
 let ft=["1.png","2.png","3.png"];
-for(let y=40; y<window.innerHeight;y+=gy);
-let row=Math.floor(y/gy);
-for (let x=20;x<window.innerWidth;x+=gx){
-    let f=document.createElement("img");
-    f.src=ft[Math.floor(Math.random()*ft.length)];
-    f.className="fishh"
-    let xx=x;
-    if(row %2 ==1){
-        xx+=gx/2;
-    };
-    f.style.left=xx+"px";
-    f.style.top=y+"px";
-    fih.appendChild(f);
-    fs.push({
-        el:f,
-        x:xx,
-        y:y,
-        dx:0,
-        dy:0
-    })
+for(let y=40; y<window.innerHeight;y+=gy){
+    let row=Math.floor(y/gy);
+    for (let x=20;x<window.innerWidth;x+=gx){
+        let f=document.createElement("img");
+        f.src=ft[Math.floor(Math.random()*ft.length)];
+        f.className="fishh"
+        let xx=x;
+        if(row %2 ==1){
+            xx+=gx/2;
+        };
+        f.style.left=xx+"px";
+        f.style.top=y+"px";
+        fih.appendChild(f);
+        fs.push({
+            el:f,
+            x:xx,
+            y:y,
+            dx:0,
+            dy:0
+        });
+    }
 }

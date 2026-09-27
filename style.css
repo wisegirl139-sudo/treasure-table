@@ -293,3 +293,16 @@ button{
     width: 90%;
 }
 
+
+#fih{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.fishh{
+    position: absolute;
+    width: 45px;
+    height: auto;
+
+}
