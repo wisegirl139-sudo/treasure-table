@@ -183,7 +183,6 @@ button{
     z-index: 10;
     width: 500px;
     max-width: 60vw;
-    aspect-ratio: 2/3;
     background-image: url(scroll.png);
     background-size: 100% 100%;
     background-position: center;
@@ -195,11 +194,15 @@ button{
 
 }
 #list p{
-    margin: 0;
+    margin: 0 auto;
     padding: 5px 0;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1;
     border-bottom: 2px dashed #8a602f;
+    width: 40%;
+    text-align: center;
+
+
 }
 #add{
     font-family: "Jacquard 24", system-ui;
