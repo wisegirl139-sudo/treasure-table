@@ -32,7 +32,9 @@
   font-weight: 700;
   font-style: normal;
 }
-
+*{
+    cursor: url("cursor.png"), auto !important;
+}
 body{
     background-color: #2d1902;
     font-family: "Jacquard 24", system-ui;
@@ -157,9 +159,6 @@ body{
     }
 }
 @media(max-width:600px){
-    #wave{
-        transform: translateY(-95%);        
-    }
     .item{
         flex: 0 0 80vw;
     }
@@ -298,22 +297,11 @@ button{
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-
+    width: 100%;
+    height: 1000px;
 }
 .fishh{
     position: absolute;
     width: 35px !important;
     height:auto !important;
-}
-.fishh:nth-child(1){
-    left: 15%;
-    top: 80%;
-}
-.fishh:nth-child(2){
-    left: 40%;
-    top: 130px;
-}
-.fishh:nth-child(3){
-    left: 65%;
-    top: 80px;
 }
