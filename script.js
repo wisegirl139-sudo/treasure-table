@@ -38,34 +38,18 @@ less.addEventListener("click",function(){
     scr.style.display="none";
 })
 //fih timee
-let wh=document.getElementById("wave");
-let ww=wh.offsetWidth;
-let hh=wh.offsetHeight;
 let fih=document.getElementById("fih");
-let fs=[];
-let fw=45;
-let gx=50;
-let gy=45;
-let ft=["1.png","2.png","3.png"];
-for(let y=80; y<hh-80;y+=gy){
-    let row=Math.floor(y/gy);
-    for (let x=20;x<ww;x+=gx){
-        let f=document.createElement("img");
-        f.src=ft[Math.floor(Math.random()*ft.length)];
-        f.className="fishh";
-        let xx=x;
-        if(row %2 ==1){
-            xx+=gx/2;
-        };
-        f.style.left=xx+"px";
-        f.style.top=y+"px";
-        fih.appendChild(f);
-        fs.push({
-            el:f,
-            x:xx,
-            y:y,
-            dx:0,
-            dy:0
-        });
-    }
+let img=document.querySelector("#wave img");
+
+function sizeFish(){
+    fih.style.height=img.offsetHeight+"px";
 }
+
+if(img.complete){
+    sizeFish();
+}
+else{
+    img.addEventListener("load",sizeFish);
+}
+
+window.addEventListener("resize",sizeFish);
