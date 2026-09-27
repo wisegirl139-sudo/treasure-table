@@ -32,8 +32,9 @@
   font-weight: 700;
   font-style: normal;
 }
-*{
-    cursor: url("cursor.png"), auto !important;
+html,
+body,*{
+    cursor: url("cursor.png") 0 0, auto;
 }
 body{
     background-color: #2d1902;
@@ -117,7 +118,7 @@ body{
     scroll-snap-align: center;
     box-sizing: border-box;
     padding: 25px;
-
+    transition: transform 0.2s;
 }
 .model{
     aspect-ratio: 1/1;
