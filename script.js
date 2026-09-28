@@ -9,7 +9,7 @@ window.addEventListener("scroll",function(){
     wave.style.transform="translateY("+pos+"%)";
 });
 //TOTAL cinema( ik its absolute but wtv wtv)
-let less=document.getElementById("less1")
+let less=document.getElementById("less")
 let but=document.getElementById("add");
 let scr=document.getElementById("scr");
 let lis=document.getElementById("list");
@@ -20,7 +20,7 @@ sel.forEach(function(s){
     s.addEventListener("change",function(){
         let item=s.closest(".item");
         if(s.checked){
-            item.style.transform="translateY(10px)";
+            item.style.transform="translateY(-10px)";
             item.style.boxShadow="18px 18px 0 #2d1902, inset 0 0 0 3px #a66b38";
         }
         else{
@@ -101,7 +101,7 @@ function swim(){
         f.x+=f.sp;
         let dx=f.x-mx;
         let dy=f.y-my;
-        let dis=Math.sqrt(dx*(dx+dy)*dy);
+        let dis=Math.sqrt(dx*dx+dy*dy);
         if(dis<100 && dis>0){
             f.x+=(dx/dis)*2;
             f.y+=(dy/dis)*2;
