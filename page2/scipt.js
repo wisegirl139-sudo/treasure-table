@@ -15,7 +15,7 @@ document.addEventListener("keydown",function(e){
     }
     per.style.left=x+"px";
     if(e.key=="ArrowUp"&& !j){
-        v=12;
+        v=10;
         j=true;
     }
 });
