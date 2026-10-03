@@ -15,14 +15,20 @@
 }
 body{
   background-color: rgb(2, 203, 203);
-  color: rgb(232, 174, 0);
+  color: rgb(121, 90, 0);
+  cursor: none;
 }
 h1{
   font-family: "Jacquard 24", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 80px;
+}
+#wint{
+  text-align: center;
+  font-family: "Cormorant Unicase", serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-#game{
-  cursor: none;
-}
+
