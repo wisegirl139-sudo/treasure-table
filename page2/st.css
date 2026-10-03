@@ -29,6 +29,11 @@ h1{
   font-family: "Cormorant Unicase", serif;
   font-size: 20px;
   font-weight: 600;
+  padding: 30px;
 }
-
+#per{
+  position: absolute;
+  left: 50px;
+  bottom: 90px;
+}
 
