@@ -13,10 +13,10 @@ document.addEventListener("keydown",function(e){
     per.style.left=x+"px";
 });
 document.addEventListener("keyup",function(e){
-    if(e.key=="arrowright"){
+    if(e.key=="ArrowRight"){
         r=false;
     }
-    if(e.key=="arrowleft"){
+    if(e.key=="ArrowLeft"){
         l=false;
     }
 });
