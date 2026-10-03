@@ -29,5 +29,10 @@
   font-style: normal;
 }
 .body{
-    background-color: aqua;
+  background-color: rgb(2, 203, 203);
+  color: rgb(232, 174, 0);
+  cursor: none;
+}
+h3{
+  font-family: "Jacquard 24", system-ui;
 }
