@@ -97,3 +97,18 @@ h1{
     opacity: 0;
   }
 }
+#score{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family:"Jacquard 24", system-ui;
+  font-size: 25px;
+  z-index: 5;
+  padding: 8px 18px;
+  background: #e3caab;
+  color: #193363;
+  border: 3px solid #a87932;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #6b461f,inset 0 0 0 2px #f5dfb5;
+}

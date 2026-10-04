@@ -47,6 +47,7 @@ spawn();
 let bg =0;
 let dead=false;
 let no=0;
+let score=document.getElementById("score");
 function move(){
     if(dead){
         return;
@@ -75,6 +76,7 @@ function move(){
             ob.remove();
             obs.splice(obs.indexOf(ob),1);
             no++;
+            score.textContent="score:"+no;
             if(no>=15){
                 window.location.href="../index.html";
                 return;
