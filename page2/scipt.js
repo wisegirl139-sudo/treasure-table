@@ -50,7 +50,7 @@ function move(){
     let o=ob.getBoundingClientRect();
     console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
     p.right-=3;    
-    o.left+=10;
+    o.left+=5;
 
     if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
         console.log("hit",p.right,o.left);//moree temporaryyyy
