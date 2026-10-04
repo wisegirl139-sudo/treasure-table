@@ -50,6 +50,8 @@ function move(){
     let o=ob.getBoundingClientRect();
     console.log(o);
     console.log(p);//temporaryyyy
+    p.right-=3;
+    o.left-=3;
     if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
         dead=true;
         alert("you hit an obstecal!");
