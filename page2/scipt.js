@@ -44,6 +44,11 @@ function move(){
         ob.remove();
         ob=spawn();
     }
+    let p=per.getBoundingClientRect();
+    let o=ob.getBoundingClientRect();
+    if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom){
+        alert("you hit an obstecal!");
+    }
     requestAnimationFrame(move);
 };
 move();
