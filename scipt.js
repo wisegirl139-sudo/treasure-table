@@ -25,12 +25,20 @@ document.addEventListener("keydown",function(e){
         },500);
     }
     if(e.key=="q"&&won){
-        won=false;
-        win.style.display="none";
-        move();
+        qb.classList.add("getbig");
+        setTimeout(function(){
+            won=false;
+            win.style.display="none";
+            qb.classList.remove("getbig");
+            move();    
+        },500);
+
     }
     if(e.key=="k"){
-        window.location.href="page2/id.html";
+        kb.classList.add("getbig");
+        setTimeout(function(){
+            window.location.href="page2/id.html";    
+        },500);
     }
 });
 let obs=[];
