@@ -31,6 +31,7 @@ let loser=document.getElementById("loser");
 let ob=spawn();
 let bg =0;
 let dead=false;
+let gap=Math.floor(Math.random()*250)-150;
 function move(){
     console.log("move runss");//also temporary 
     bg-=5;
@@ -47,7 +48,7 @@ function move(){
     }
     per.style.bottom=y+"px";
     ob.style.left=(parseInt(ob.style.left)-5)+"px";
-    if(parseInt(ob.style.left)<-80){
+    if(parseInt(ob.style.left)<gap){
         ob.remove();
         ob=spawn();
     }    
