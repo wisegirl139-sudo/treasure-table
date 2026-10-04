@@ -25,7 +25,9 @@ function spawn(){
 }
 let ob=spawn();
 let bg =0;
+let dead=false;
 function move(){
+    console.log("move runss");//also temporary 
     bg-=3;
     if(bg<=-851){
         bg=0;
@@ -46,7 +48,10 @@ function move(){
     }
     let p=per.getBoundingClientRect();
     let o=ob.getBoundingClientRect();
-    if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom){
+    console.log(o);
+    console.log(p);//temporaryyyy
+    if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
+        dead=true;
         alert("you hit an obstecal!");
     }
     requestAnimationFrame(move);
