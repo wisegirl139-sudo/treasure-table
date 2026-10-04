@@ -44,4 +44,23 @@ h1{
   background-repeat: repeat-x;
   background-size: 851px 315px;
 }
+#loser{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #193363ba;
+  z-index: 10;
+  text-align: center;
+  padding-top: 150px;
+  cursor: none;
+}
+#loser h2{
+  font-size: 60px;
+  font-family: "Jacquard 24", system-ui;
+}
+#rst{
+  font-size: 25px;
+  padding: 10px 25px;
+  cursor: none;
+}
 

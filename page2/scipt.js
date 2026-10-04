@@ -9,7 +9,7 @@ document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
     if(e.key=="ArrowUp"&& !j){
-        v=12;
+        v=13.5;
         j=true;
     }
 });
@@ -28,7 +28,7 @@ let bg =0;
 let dead=false;
 function move(){
     console.log("move runss");//also temporary 
-    bg-=3;
+    bg-=5;
     if(bg<=-851){
         bg=0;
     }//loop de loop
@@ -41,7 +41,7 @@ function move(){
         j=false
     }
     per.style.bottom=y+"px";
-    ob.style.left=(parseInt(ob.style.left)-3)+"px";
+    ob.style.left=(parseInt(ob.style.left)-5)+"px";
     if(parseInt(ob.style.left)<-80){
         ob.remove();
         ob=spawn();
@@ -51,6 +51,7 @@ function move(){
     console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
     p.right-=3;    
     o.left+=5;
+    console.log("p bottom:",p.bottom,"ob top:",o.top);
 
     if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
         console.log("hit",p.right,o.left);//moree temporaryyyy
