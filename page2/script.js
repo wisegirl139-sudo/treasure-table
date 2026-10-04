@@ -1,12 +1,18 @@
 let wave =document.getElementById("wave");
-let st=-window.innerHeight*0.8;
-wave.style.top="20vh";
+wave.style.top="0"; 
+wave.style.transform="translateY(85%)";
 window.addEventListener("scroll",function(){
-    let pos=-95+window.scrollY/5;
-    if(pos>-35){
-        pos=-35;
-    };
-    wave.style.transform="translateY("+pos+"%)";
+    function move(){
+        let pos=-85+window.scrollY/5;
+        if(pos>0){
+            pos=0;
+        }
+        wave.style.transform="translateY("+pos+"%)";
+    }
+    move();
+    window.addEventListener("scroll",function(){
+        move();
+    });
 });
 //TOTAL cinema( ik its absolute but wtv wtv)
 let less=document.getElementById("less")
@@ -36,7 +42,6 @@ but.addEventListener("click",function(){
     sel.forEach(function(sels){
 
         if(sels.checked){
-            
             let p=document.createElement("p");
             p.textContent="component"+(count+1)+"-"+sels.dataset.weight+"g";
             lis.appendChild(p);
@@ -59,13 +64,13 @@ let img=wh.querySelector("img");
 let fih=document.getElementById("fih");
 let fs=[];
 let fw=45;
-let gx=35;
-let gy=35;
+let gx=90;
+let gy=75;
 let ft=["1.png","2.png","3.png"];
 img.addEventListener("load",function(){
     let ww=img.offsetWidth;
     let hh=img.offsetHeight;
-    for(let y=80; y<hh-180;y+=gy){
+    for(let y=100; y<hh-50;y+=gy){
         let row=Math.floor(y/gy);
         for (let x=20;x<ww;x+=gx){
             let f=document.createElement("img");
@@ -82,7 +87,7 @@ img.addEventListener("load",function(){
                 el:f,
                 x:xx,
                 y:y,
-                sp:0.3+Math.random()*0.8
+                sp:0.3+Math.random()*1.5
             });
         }
     }
@@ -95,12 +100,6 @@ function swim(){
         f.x+=f.sp;
         if(f.x>fih.offsetWidth){
             f.x=-50;
-        }
-        if(f.y<80){
-            f.y=80;
-        }
-        if(f.y>fih.offsetHeight-80){
-            f.y=fih.offsetHeight-80;
         }
         f.el.style.left=f.x+"px";
         f.el.style.top=f.y+"px";
