@@ -7,6 +7,10 @@ let v=0;
 let j=false;
 let rst=document.getElementById("rst");
 let loser=document.getElementById("loser");
+let win=document.getElementById("win");
+let qb =document.getElementById("q");
+let kb= document.getElementById("k");
+let won = false
 document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
@@ -19,6 +23,14 @@ document.addEventListener("keydown",function(e){
         setTimeout(function(){
             location.reload();
         },500);
+    }
+    if(e.key=="q"&&won){
+        won=false;
+        win.style.display="none";
+        move();
+    }
+    if(e.key=="k"){
+        window.location.href="page2/id.html";
     }
 });
 let obs=[];
@@ -49,7 +61,7 @@ let dead=false;
 let no=0;
 let score=document.getElementById("score");
 function move(){
-    if(dead){
+    if(dead || won){
         return;
     }
     console.log("move runss");//also temporary 
@@ -77,8 +89,9 @@ function move(){
             obs.splice(obs.indexOf(ob),1);
             no++;
             score.textContent="score:"+no;
-            if(no>=15){
-                window.location.href="page2/id.html";
+            if(no>=3){
+                won=true;
+                win.style.display="block";
                 return;
             }
             spawn();
@@ -89,8 +102,6 @@ function move(){
             loser.style.display="block";
         }
     } 
-
-
     requestAnimationFrame(move);
 };
 move();
