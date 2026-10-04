@@ -17,7 +17,7 @@ function spawn(){
     let ob= document.createElement("img");
     ob.src="4.png";
     ob.style.position="absolute";
-    ob.style.left="850px";
+    ob.style.left=document.getElementById("game").offsetWidth+"px";
     ob.style.bottom="75px";
     ob.style.width="70px";
     document.getElementById("game").appendChild(ob);
