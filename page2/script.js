@@ -42,9 +42,11 @@ but.addEventListener("click",function(){
 
         if(sels.checked){
             let p=document.createElement("p");
-            p.textContent="component"+(count+1)+"-"+sels.dataset.weight+"g";
+            p.textContent="component"+(count+1)+"x"+qty+"="+Number(sels.dataset.weight)*qty+"g";
             lis.appendChild(p);
-            num+=Number(sels.dataset.weight);
+            let item=sels.closest(".item");
+            let qty=Number(item.querySelector(".qty").textContent);
+            num+=Number(sels.dataset.weight)*qty;
             count++;
         }
     });
@@ -105,3 +107,21 @@ function swim(){
     });
     requestAnimationFrame(swim);
 }
+let items=document.querySelectorAll(".item");
+items.forEach(function(item){
+    let minus=item.querySelector(".minus");
+    let plus=item.querySelector(".plus");
+    let qty=item.querySelector(".qty");
+    plus.addEventListener("click",function(){
+        let num=Number(qty.textContent);
+        num++;
+        qty.textContent=num;
+    });
+    minus.addEventListener("click",function(){
+        let num =Number(qty.textContent);
+        if(num>1){
+            num--;
+        }
+        qty.textContent=num
+    });
+});
