@@ -38,7 +38,7 @@ function spawn(){
 let ob=spawn();
 let bg =0;
 let dead=false;
-let gap=0
+let gap=Math.random()*500+150;
 function move(){
     console.log("move runss");//also temporary 
     bg-=5;
@@ -54,13 +54,16 @@ function move(){
         j=false
     }
     per.style.bottom=y+"px";
-    ob.style.left=(parseInt(ob.style.left)-5)+"px";
-    if(parseInt(ob.style.left)<-80){
-        ob.remove();
-        gap=Math.floor(Math.random()*150)+100;
+    
+    for(let ob of obs){
+        ob.style.left=(parseInt(ob.style.left)-5)+"px";  
+        if(parseInt(ob.style.left)<-80){
+            ob.remove();
+            obs.splice(obs.indexOf(ob),1);
+        } 
         ob=spawn();
         ob.style.left=(document.getElementById("game").offsetWidth+gap)+"px";
-    }    
+    } 
     let p=per.getBoundingClientRect();
     let o=ob.getBoundingClientRect();
     console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
