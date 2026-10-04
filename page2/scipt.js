@@ -26,19 +26,28 @@ function spawn(){
     let ob= document.createElement("img");
     let num=Math.floor(Math.random()*4)+1;
     ob.src=num+".png";
-    ob.style.position="absolute";
-    ob.style.left=document.getElementById("game").offsetWidth+"px";
+    ob.style.position="absolute";    
+    let pos=document.getElementById("game").offsetWidth;
+    if(obs.length>0){
+        let last =obs[obs.length-1];
+        let gap=Math.random()*300+60;
+        pos=parseInt(last.style.left)+70+gap;
+    }
+    ob.style.left=pos+"px";
     ob.style.bottom="75px";
     ob.style.width="70px";
+
     document.getElementById("game").appendChild(ob);
     obs.push(ob);
     return ob;
 }
 
-let ob=spawn();
+spawn();
+spawn();
+spawn();
 let bg =0;
 let dead=false;
-let gap=Math.random()*500+150;
+
 function move(){
     console.log("move runss");//also temporary 
     bg-=5;
@@ -54,29 +63,24 @@ function move(){
         j=false
     }
     per.style.bottom=y+"px";
-    
+    let p=per.getBoundingClientRect();
     for(let ob of obs){
+        let o=ob.getBoundingClientRect();
+        p.right-=3;
+        o.left+=5;
         ob.style.left=(parseInt(ob.style.left)-5)+"px";  
         if(parseInt(ob.style.left)<-80){
             ob.remove();
             obs.splice(obs.indexOf(ob),1);
-        } 
+        }     
+        if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
+            console.log("hit",p.right,o.left);//moree temporaryyyy
+            dead=true;
+            loser.style.display="block";
+        }
     } 
-    spawn();
-    spawn();
-    spawn();
-    let p=per.getBoundingClientRect();
-    let o=ob.getBoundingClientRect();
-    console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
-    p.right-=3;    
-    o.left+=5;
-    console.log("p bottom:",p.bottom,"ob top:",o.top);
 
-    if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
-        console.log("hit",p.right,o.left);//moree temporaryyyy
-        dead=true;
-        loser.style.display="block";
-    }
+
     requestAnimationFrame(move);
 };
 move();
