@@ -2,7 +2,7 @@ let per=document.getElementById("per");
 let x=50;
 let l=false;
 let r=false;
-let y=90;
+let y=75;
 let v=0;
 let j=false;
 document.addEventListener("keydown",function(e){
@@ -27,7 +27,18 @@ document.addEventListener("keyup",function(e){
         l=false;
     }
 });
+let ob= document.createElement("img");
+ob.src="4.png";
+
+let bg =0;
 function move(){
+    if(r){
+        bg-=3;
+    }
+    if(l){
+        bg+=3;
+    }
+    document.getElementById("game").style.backgroundPosition=bg+"px 0px";
     if(r){
         x+=3;
     }
@@ -37,8 +48,8 @@ function move(){
     per.style.left=x+"px";
     v-=0.5;
     y+=v;
-    if(y<=90){
-        y=90;
+    if(y<=75){
+        y=75;
         v=0;
         j=false
     }

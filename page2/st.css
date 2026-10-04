@@ -14,8 +14,8 @@
   font-style: normal;
 }
 body{
-  background-color: rgb(2, 203, 203);
-  color: rgb(121, 90, 0);
+  background-color:#193363;
+  color:  rgb(2, 203, 203);
   cursor: none;
 }
 h1{
@@ -29,11 +29,19 @@ h1{
   font-family: "Cormorant Unicase", serif;
   font-size: 20px;
   font-weight: 600;
-  padding: 30px;
 }
 #per{
   position: absolute;
   left: 50px;
-  bottom: 90px;
+  bottom: 75px;
+}
+#game{
+  position: relative;
+  width: 100%;
+  height: 315px;
+  overflow: hidden;
+  background-image: url(../path.png);
+  background-repeat: repeat-x;
+  background-size: 851px 315px;
 }
 
