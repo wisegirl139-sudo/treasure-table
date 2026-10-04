@@ -1,19 +1,18 @@
 let wave =document.getElementById("wave");
 wave.style.top="0"; 
-wave.style.transform="translateY(85%)";
-window.addEventListener("scroll",function(){
-    function move(){
-        let pos=-85+window.scrollY/5;
-        if(pos>0){
-            pos=0;
-        }
-        wave.style.transform="translateY("+pos+"%)";
+wave.style.transform="translateY(-s85%)";
+function move(){
+    let pos=-85+window.scrollY/5;
+    if(pos>0){
+        pos=0;
     }
+    wave.style.transform="translateY("+pos+"%)";
+}
+move();
+window.addEventListener("scroll",function(){
     move();
-    window.addEventListener("scroll",function(){
-        move();
-    });
 });
+
 //TOTAL cinema( ik its absolute but wtv wtv)
 let less=document.getElementById("less")
 let but=document.getElementById("add");
