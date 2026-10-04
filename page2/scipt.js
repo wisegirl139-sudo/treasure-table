@@ -61,9 +61,10 @@ function move(){
             ob.remove();
             obs.splice(obs.indexOf(ob),1);
         } 
-        ob=spawn();
-        ob.style.left=(document.getElementById("game").offsetWidth+gap)+"px";
     } 
+    spawn();
+    spawn();
+    spawn();
     let p=per.getBoundingClientRect();
     let o=ob.getBoundingClientRect();
     console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
