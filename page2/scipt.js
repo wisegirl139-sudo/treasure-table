@@ -12,7 +12,11 @@ document.addEventListener("keydown",function(e){
         v=13.5;
         j=true;
     }
+    if(e.key=="q"&& dead){
+        location.reload();
+    }
 });
+
 function spawn(){
     let ob= document.createElement("img");
     ob.src="4.png";
@@ -23,6 +27,7 @@ function spawn(){
     document.getElementById("game").appendChild(ob);
     return ob;
 }
+let loser=document.getElementById("loser");
 let ob=spawn();
 let bg =0;
 let dead=false;
@@ -56,7 +61,7 @@ function move(){
     if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
         console.log("hit",p.right,o.left);//moree temporaryyyy
         dead=true;
-        alert("you hit an obstecal!");
+        loser.style.display="block";
     }
     requestAnimationFrame(move);
 };
