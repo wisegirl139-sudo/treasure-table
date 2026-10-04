@@ -11,7 +11,7 @@ document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
     if(e.key=="ArrowUp"&& !j){
-        v=13.5;
+        v=12;
         j=true;
     }
     if(e.key=="q"&& dead){
@@ -24,7 +24,8 @@ document.addEventListener("keydown",function(e){
 
 function spawn(){
     let ob= document.createElement("img");
-    ob.src="4.png";
+    let num=Math.floor(Math.random()*4)+1;
+    ob.src=num+".png";
     ob.style.position="absolute";
     ob.style.left=document.getElementById("game").offsetWidth+"px";
     ob.style.bottom="75px";
@@ -55,7 +56,7 @@ function move(){
     ob.style.left=(parseInt(ob.style.left)-5)+"px";
     if(parseInt(ob.style.left)<-80){
         ob.remove();
-        gap=Math.floor(Math.random()*250)+150;
+        gap=Math.floor(Math.random()*150)+100;
         ob=spawn();
         ob.style.left=(document.getElementById("game").offsetWidth+gap)+"px";
     }    
