@@ -29,7 +29,10 @@ document.addEventListener("keyup",function(e){
 });
 let ob= document.createElement("img");
 ob.src="4.png";
-
+ob.style.position="absolute";
+ob.style.left="850px";
+ob.style.bottom="90px";
+document.getElementById("game").appendChild(ob);
 let bg =0;
 function move(){
     if(r){
@@ -54,6 +57,7 @@ function move(){
         j=false
     }
     per.style.bottom=y+"px";
+    ob.style.left=(parseInt(ob.style.left)-3)+"px";
     requestAnimationFrame(move);
 };
 move();
