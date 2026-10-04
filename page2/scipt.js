@@ -11,7 +11,7 @@ document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
     if(e.key=="ArrowUp"&& !j){
-        v=12;
+        v=14;
         j=true;
     }
     if(e.key=="q"&& dead){
@@ -30,7 +30,7 @@ function spawn(){
     let pos=document.getElementById("game").offsetWidth;
     if(obs.length>0){
         let last =obs[obs.length-1];
-        let gap=Math.random()*300+60;
+        let gap=Math.random()*500+150;
         pos=parseInt(last.style.left)+70+gap;
     }
     ob.style.left=pos+"px";
@@ -41,13 +41,12 @@ function spawn(){
     obs.push(ob);
     return ob;
 }
-
 spawn();
 spawn();
 spawn();
 let bg =0;
 let dead=false;
-
+let no=0;
 function move(){
     console.log("move runss");//also temporary 
     bg-=5;
@@ -55,7 +54,7 @@ function move(){
         bg=0;
     }//loop de loop
     document.getElementById("game").style.backgroundPosition=bg+"px 0px";
-    v-=0.5;
+    v-=0.6;
     y+=v;
     if(y<=75){
         y=75;
@@ -66,14 +65,20 @@ function move(){
     let p=per.getBoundingClientRect();
     for(let ob of obs){
         let o=ob.getBoundingClientRect();
-        p.right-=3;
-        o.left+=5;
+        let pr=p.right-=3;
+        let ol=o.left+=5;
         ob.style.left=(parseInt(ob.style.left)-5)+"px";  
         if(parseInt(ob.style.left)<-80){
             ob.remove();
             obs.splice(obs.indexOf(ob),1);
+            no++;
+            if(no>=15){
+                window.location.href="../index.html";
+                return;
+            }
+            spawn();
         }     
-        if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
+        if(pr>ol && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
             console.log("hit",p.right,o.left);//moree temporaryyyy
             dead=true;
             loser.style.display="block";
