@@ -9,7 +9,7 @@ document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
     if(e.key=="ArrowUp"&& !j){
-        v=10;
+        v=12;
         j=true;
     }
 });
@@ -17,12 +17,13 @@ let ob= document.createElement("img");
 ob.src="4.png";
 ob.style.position="absolute";
 ob.style.left="850px";
-ob.style.bottom="90px";
+ob.style.bottom="75px";
+ob.style.width="70px";
 document.getElementById("game").appendChild(ob);
 let bg =0;
 function move(){
     bg-=3;
-    if(bg<=851){
+    if(bg<=-851){
         bg=0;
     }//loop de loop
     document.getElementById("game").style.backgroundPosition=bg+"px 0px";
