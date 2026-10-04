@@ -5,6 +5,8 @@ let r=false;
 let y=75;
 let v=0;
 let j=false;
+let rst=document.getElementById("rst");
+let loser=document.getElementById("loser");
 document.addEventListener("keydown",function(e){
     //i like to move it move it(defomade this joke before) doin keys now tho
     per.style.left=x+"px";
@@ -13,7 +15,10 @@ document.addEventListener("keydown",function(e){
         j=true;
     }
     if(e.key=="q"&& dead){
-        location.reload();
+        rst.classList.add("getbig");
+        setTimeout(function(){
+            location.reload();
+        },500);
     }
 });
 
@@ -27,7 +32,7 @@ function spawn(){
     document.getElementById("game").appendChild(ob);
     return ob;
 }
-let loser=document.getElementById("loser");
+
 let ob=spawn();
 let bg =0;
 let dead=false;

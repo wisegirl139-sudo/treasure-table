@@ -81,3 +81,12 @@ h1{
 #rst.getbig{
   animation: boom 0.5s forwards;
 }
+@keyframes boom{
+  0%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  40%{
+    transform: scale(1.2);
+  }
+}
