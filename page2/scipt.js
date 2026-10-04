@@ -21,7 +21,7 @@ document.addEventListener("keydown",function(e){
         },500);
     }
 });
-
+let obs=[];
 function spawn(){
     let ob= document.createElement("img");
     let num=Math.floor(Math.random()*4)+1;
@@ -31,6 +31,7 @@ function spawn(){
     ob.style.bottom="75px";
     ob.style.width="70px";
     document.getElementById("game").appendChild(ob);
+    obs.push(ob);
     return ob;
 }
 
