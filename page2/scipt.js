@@ -13,13 +13,17 @@ document.addEventListener("keydown",function(e){
         j=true;
     }
 });
-let ob= document.createElement("img");
-ob.src="4.png";
-ob.style.position="absolute";
-ob.style.left="850px";
-ob.style.bottom="75px";
-ob.style.width="70px";
-document.getElementById("game").appendChild(ob);
+function spawn(){
+    let ob= document.createElement("img");
+    ob.src="4.png";
+    ob.style.position="absolute";
+    ob.style.left="850px";
+    ob.style.bottom="75px";
+    ob.style.width="70px";
+    document.getElementById("game").appendChild(ob);
+    return ob;
+}
+let ob=spawn();
 let bg =0;
 function move(){
     bg-=3;
@@ -36,6 +40,10 @@ function move(){
     }
     per.style.bottom=y+"px";
     ob.style.left=(parseInt(ob.style.left)-3)+"px";
+    if(parseInt(ob.style.left)<-80){
+        ob.remove();
+        ob=spawn();
+    }
     requestAnimationFrame(move);
 };
 move();
