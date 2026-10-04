@@ -31,7 +31,7 @@ let loser=document.getElementById("loser");
 let ob=spawn();
 let bg =0;
 let dead=false;
-let gap=Math.floor(Math.random()*250)-150;
+let gap=0
 function move(){
     console.log("move runss");//also temporary 
     bg-=5;
@@ -48,9 +48,11 @@ function move(){
     }
     per.style.bottom=y+"px";
     ob.style.left=(parseInt(ob.style.left)-5)+"px";
-    if(parseInt(ob.style.left)<gap){
+    if(parseInt(ob.style.left)<-80){
         ob.remove();
+        gap=Math.floor(Math.random()*250)+150;
         ob=spawn();
+        ob.style.left=(document.getElementById("game").offsetWidth+gap)+"px";
     }    
     let p=per.getBoundingClientRect();
     let o=ob.getBoundingClientRect();

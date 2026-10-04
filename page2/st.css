@@ -29,6 +29,8 @@ h1{
   font-family: "Cormorant Unicase", serif;
   font-size: 20px;
   font-weight: 600;
+  position: relative;
+  z-index: -1;
 }
 #per{
   position: absolute;
@@ -43,6 +45,7 @@ h1{
   background-image: url(../path.png);
   background-repeat: repeat-x;
   background-size: 851px 315px;
+  z-index: 2;
 }
 #loser{
   display: none;
@@ -62,5 +65,11 @@ h1{
   font-size: 25px;
   padding: 10px 25px;
   cursor: none;
+}
+#per{
+  position: absolute;
+  left: 50px;
+  bottom: 75px;
+  z-index: 4;
 }
 
