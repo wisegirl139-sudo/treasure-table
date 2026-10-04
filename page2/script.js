@@ -89,23 +89,10 @@ img.addEventListener("load",function(){
     swim();
 });
 //fishies move
-let mx=-1000;
-let my=-1000;
-window.addEventListener("mousemove",function(e){
-    let r=fih.getBoundingClientRect();
-    mx=e.clientX-r.left;
-    my=e.clientY-r.top;
-});
+
 function swim(){
     fs.forEach(function(f){
         f.x+=f.sp;
-        let dx=f.x-mx;
-        let dy=f.y-my;
-        let dis=Math.sqrt(dx*dx+dy*dy);
-        if(dis<100 && dis>0){
-            f.x+=(dx/dis)*2;
-            f.y+=(dy/dis)*2;
-        }
         if(f.x>fih.offsetWidth){
             f.x=-50;
         }

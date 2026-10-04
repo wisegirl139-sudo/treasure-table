@@ -78,7 +78,7 @@ function move(){
             no++;
             score.textContent="score:"+no;
             if(no>=15){
-                window.location.href="../index.html";
+                window.location.href="page2/id.html";
                 return;
             }
             spawn();

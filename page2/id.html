@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="st.css">
-        <title>Win to see</title>
+        <link rel="stylesheet" href="style.css">
+        <title>Treasure Table</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet">
@@ -11,23 +11,83 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
+    
     <body>
-        <div id="wint">
-            <h1>win to access page</h1>
-            <p>use top arrow key or top button of adventure pad to make the pirate reach the end of her adventure!!</p>
-        </div>
-        <div id="game">
-            <div id="score">score:0</div>
-            <div id="per">
-                <img src="../Untitled design (27).png" alt="pirate" height="100px" width="auto">
+        <header id="oo">
+            <h1>Treasure table</h1>
+            <p>a table attachment that has multiple components find a combination you like and get print files and filament weight for it!!!</p>
+        </header>
+        <main>
+            <div id="wave">
+                <img src="Untitled design (26).png" alt="wscroll">
+                <div id="fih"></div>
             </div>
-            <div class="place"></div>
-            <div id="end"></div>
-        </div>
-        <div id="loser">
-            <h2>Ha! You lost :'(</h2>
-            <button id="rst">press q to try again</button>
-        </div>
-        <script src="scipt.js"></script>
+            <section id="seld">
+                <h4>Do you treasure a table? get some treasure to hold your treasure on our treasure table, table attachment!!</h4>
+                <div id="gallery">
+                    <div class="item">
+                        <div class="model">
+                            <h5>interactive component</h5>
+                        </div>
+                        <h6>component 1</h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="52">
+                        </label>
+                        <p>52g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="model">
+                            <h5>interactive component</h5>
+                        </div>
+                        <h6>component 2</h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="41">
+                        </label>
+                        <p>41g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="model">
+                            <h5>interactive component</h5>
+                        </div>
+                        <h6>component 3</h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="30">
+                        </label>
+                        <p>30g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>                    
+                </div>
+            </section>  
+            <div id="tools">
+                <button id="add">Find weight!!</button>  
+                <button id="less">less</button>     
+                <div id="scr">
+                    <h4>your components</h4>
+                    <div id="list"></div>
+                    <p id="ncomp">0 components</p>
+                    <p id="total">total: 0g</p>
+                </div>   
+            </div>    
+
+        </main>
+        <footer>
+            <p>web by aanya , prints by oliver</p>
+        </footer>
+        <script src="script.js"></script>
     </body>
-</html>   
+</html>

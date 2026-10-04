@@ -41,7 +41,7 @@ h1{
   position: relative;
   width: 100%;
   height: 315px;
-  background-image: url(../path.png);
+  background-image: url(path.png);
   background-repeat: repeat-x;
   background-size: 851px 315px;
   z-index: 2;
