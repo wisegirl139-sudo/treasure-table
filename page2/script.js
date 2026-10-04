@@ -1,6 +1,6 @@
 let wave =document.getElementById("wave");
 wave.style.top="0"; 
-wave.style.transform="translateY(-s85%)";
+wave.style.transform="translateY(-85%)";
 function move(){
     let pos=-85+window.scrollY/5;
     if(pos>0){
@@ -40,12 +40,13 @@ but.addEventListener("click",function(){
     lis.innerHTML="";
     sel.forEach(function(sels){
 
-        if(sels.checked){
+        if(sels.checked){            
+            let item=sels.closest(".item");
+            let qty=Number(item.querySelector(".qty").textContent);
             let p=document.createElement("p");
             p.textContent="component"+(count+1)+"x"+qty+"="+Number(sels.dataset.weight)*qty+"g";
             lis.appendChild(p);
-            let item=sels.closest(".item");
-            let qty=Number(item.querySelector(".qty").textContent);
+
             num+=Number(sels.dataset.weight)*qty;
             count++;
         }

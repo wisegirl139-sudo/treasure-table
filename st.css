@@ -112,3 +112,24 @@ h1{
   font-weight: 600;
   box-shadow: 4px 4px 0 #6b461f,inset 0 0 0 2px #f5dfb5;
 }
+#win{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #193363d3;
+  z-index: 20;
+  text-align: center;
+  padding-top: 120px;
+  color: #e3caab;
+}
+#win h2{
+  font-family: "Jacquard 24",system-ui;
+  font-size: 55px;
+}
+#win button{
+  font-family: "Cormorant Unicase",serif;
+  font-size: 22px;
+  padding: 12px 20px;
+  margin: 10px;
+  cursor: none;
+}
