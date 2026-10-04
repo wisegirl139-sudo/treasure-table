@@ -48,6 +48,9 @@ let bg =0;
 let dead=false;
 let no=0;
 function move(){
+    if(dead){
+        return;
+    }
     console.log("move runss");//also temporary 
     bg-=5;
     if(bg<=-851){
