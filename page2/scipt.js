@@ -45,14 +45,15 @@ function move(){
     if(parseInt(ob.style.left)<-80){
         ob.remove();
         ob=spawn();
-    }
+    }    
     let p=per.getBoundingClientRect();
     let o=ob.getBoundingClientRect();
-    console.log(o);
-    console.log(p);//temporaryyyy
-    p.right-=3;
-    o.left-=3;
+    console.log("pirate:",p.left,p.right,p.top,p.bottom,"obstacle:",o.left,o.right,o.top,o.bottom);
+    p.right-=3;    
+    o.left+=10;
+
     if(p.right>o.left && p.left<o.right&& p.bottom>o.top&& p.top<o.bottom && !dead){
+        console.log("hit",p.right,o.left);//moree temporaryyyy
         dead=true;
         alert("you hit an obstecal!");
     }
