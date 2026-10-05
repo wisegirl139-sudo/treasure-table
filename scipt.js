@@ -97,7 +97,7 @@ function move(){
             obs.splice(obs.indexOf(ob),1);
             no++;
             score.textContent="score:"+no;
-            if(no>=3){
+            if(no==3){
                 won=true;
                 win.style.display="block";
                 return;
