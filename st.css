@@ -130,9 +130,16 @@ h1{
 #win button{
   font-family: "Cormorant Unicase",serif;
   font-size: 22px;
-  padding: 12px 20px;
   margin: 10px;
   cursor: none;
+  font-weight: 600;
+  color: #2d1902;
+  background: #e3caab;
+  border: 4px solid #a66b38;
+  border-radius: 8px;
+  padding: 14px 24px;
+  box-shadow: 6px 6px 0 #6b461f, inset 0 0 0 2px #f5dfb5;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,background 0.15s ease;
 }
 #q.getbig,#k.getbig{
   animation: big 0.5s ease ;
