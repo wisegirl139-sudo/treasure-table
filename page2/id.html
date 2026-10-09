@@ -10,6 +10,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+            }
+        }
+        </script>
+
     </head>
     
     <body>
@@ -26,8 +35,8 @@
                 <h4>Do you treasure a table? get some treasure to hold your treasure on our treasure table, table attachment!!</h4>
                 <div id="gallery">
                     <div class="item">
-                        <div class="model">
-                            <h5>interactive component</h5>
+                        <div class="model" data-model="./OBJ/cableClip.OBJ">
+                            
                         </div>
                         <h6>component 1</h6>
                         <label>
@@ -88,6 +97,6 @@
         <footer>
             <p>web by aanya , prints by oliver</p>
         </footer>
-        <script src="script.js"></script>
+        <script type="module"  src="script.js"></script>
     </body>
 </html>

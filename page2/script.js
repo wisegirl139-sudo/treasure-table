@@ -1,3 +1,11 @@
+
+
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
+
+import { OBJLoader } from "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/OBJLoader.js";
+
+
+
 let wave =document.getElementById("wave");
 wave.style.top="0"; 
 wave.style.transform="translateY(-85%)";
@@ -126,6 +134,12 @@ items.forEach(function(item){
         qty.textContent=num
     });
 });
+
+
+
+
+
+
 //let current=0;
 //let its=document.querySelectorAll(".item");
 //document.addEventListener("keydown",function(e){
