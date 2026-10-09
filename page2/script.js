@@ -134,7 +134,14 @@ items.forEach(function(item){
         qty.textContent=num
     });
 });
-
+document.querySelectorAll(".model[data-model]").forEach(box=>{
+    const scene= new THREE.scene();
+    const camera=new THREE.PrespectiveCamera(45,1,0.3,1000);//pov youre a cable clip (2020 flashbacks)
+    const renderer=new THREE.WebGLRenderer({alpha:true, antialias:true}); //js just has some of the best libraries honestly like three p5 even media pipe i think
+    renderer.setSize(box,clientHeight,box.clientWidth);
+    box.appendChild(renderer.domElement);
+    scene.add(new THREE.hemisphereLight(0xffffff,0x604020,3));
+})
 
 
 
