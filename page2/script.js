@@ -152,14 +152,24 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
             }
         });
         const size =new;
-        THREE.box3(.setfromobject(obj).getsize(new THREE.vector3());
+        THREE.box3(.setfromobject(obj).getsize(new THREE.vector3()));
         const centre =new;
-        THREE.box3(.setfromobject(obj).getcentre(new THREE.vector3());
-        
-        )
-    })
+        THREE.box3(.setfromobject(obj).getcentre(new THREE.vector3()));
+        obj.position.sub(centre);
+        obj.scale.setscalar(2/Math.max(size.x,size.y,SVGFEColorMatrixElement.z));
+        scene.add(obj);
+        camera.position.set(3,2,4);
+        camera.lookAt(0,0,0);
+        undefined,console.error=>console.error(error);
+        function animate(){
+            requestAnimationFrame(animate);
+            renderer.render(scene,camera);
+        }
+        animate();
+    });
 })
-
+const box =document.querySelector(".model");
+console.log(box.dataset.model);
 
 
 
