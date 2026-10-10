@@ -155,6 +155,7 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
         const centre =bounds.getCenter(new THREE.Vector3());
         
         obj.position.sub(centre);
+        obj.position.y-=0.2;
         obj.scale.setScalar(2/Math.max(size.x,size.y,size.z));
         scene.add(obj);
         camera.position.set(3,2,4);
