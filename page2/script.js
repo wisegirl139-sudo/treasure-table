@@ -140,7 +140,24 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
     const renderer=new THREE.WebGLRenderer({alpha:true, antialias:true}); //js just has some of the best libraries honestly like three p5 even media pipe i think
     renderer.setSize(box,clientHeight,box.clientWidth);
     box.appendChild(renderer.domElement);
-    scene.add(new THREE.hemisphereLight(0xffffff,0x604020,3));
+    scene.add(new THREE.hemisphereLight(0xffffff,0x604020,3)); //let the light in ig , idk why  im making sm notes , probs practicing for my nea
+    const loader=new OBJLoader();
+    loader.load(box.dataset.model,obj=>{
+        obj.transverse(part=>{
+            if(part.isMesh){
+                part.material=new;
+                THREE.meshstandardmaterial({
+                    color:0xa66b38
+                });
+            }
+        });
+        const size =new;
+        THREE.box3(.setfromobject(obj).getsize(new THREE.vector3());
+        const centre =new;
+        THREE.box3(.setfromobject(obj).getcentre(new THREE.vector3());
+        
+        )
+    })
 })
 
 
