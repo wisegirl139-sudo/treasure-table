@@ -3,7 +3,7 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 
 import { OBJLoader } from "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/OBJLoader.js";
-
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js";
 
 
 let wave =document.getElementById("wave");
@@ -150,17 +150,20 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
                 });
             }
         });
-        const bounds= new THREE.Box3.setfromobject(obj);
-        const size =new bounds.getsize(new THREE.Vector3());
-        const centre =new bounds.getcentre(new THREE.Vector3());
+        const bounds= new THREE.Box3().setFromObject(obj);
+        const size =bounds.getSize(new THREE.Vector3());
+        const centre =bounds.getCenter(new THREE.Vector3());
         
         obj.position.sub(centre);
-        obj.scale.setscalar(2/Math.max(size.x,size.y,size.z));
+        obj.scale.setScalar(2/Math.max(size.x,size.y,size.z));
         scene.add(obj);
         camera.position.set(3,2,4);
         camera.lookAt(0,0,0);
     },undefined,error=>console.error(error));
-    const controls=new OrbitControls(camera,renderer.domElement)
+    const controls=new OrbitControls(camera,renderer.domElement);
+    controls.enableDamping=true;
+    controls.autoRotate=true;
+    controls.autoRotateSpeed=2;
     function animate(){
         requestAnimationFrame(animate);
         renderer.render(scene,camera);
