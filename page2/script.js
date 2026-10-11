@@ -155,8 +155,36 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
     const pivot=new THREE.Group();
     sce.add(pivot);
     load.load(box.dataset.model.trim(),obj=>{
-        
-    })
+        obj.traverse(part=>{
+            if(part.isMesh){
+                part.material=new THREE.MeshStandardMaterial({
+                    color:0xa66b38
+                });
+            }
+        });
+        const bounds= new THREE.Box3ox3().setFromObject(obj);//done this section like 10 times omg overall(not even a hyperbole) 
+        const size= bounds.getSize(new THREE.Vector3());
+        const maxsize=Math.max(size.x,size.y,size.z);
+        if(!maxsize||!Number.isFinite(maxsize)) return;
+        obj.scale.setScalar(1.5/maxsize);
+        const newbounds= new THREE.Box3().setFromObject(obj);
+        const centre= newbounds.getCenter(new THREE.Vector3());
+        obj.position.sub(centre);
+        pivot.add(obj);
+        lca.position.set(3,2,4);
+        lca.lookAt(0,0,0);
+        controls.target.set(0,0,0);
+    },undefined,error => {
+        console.error("Model failed:",box.dataset.model,error);
+    });
+    const controls= new OrbitControls(camera,render.domElement);
+    controls.minPolarAngle=0.3;
+    controls.maxPolarAngle=Math.PI/2;
+    controls.minDistance=2;
+    controls.maxDistance=10;
+    controls.enableDamping=true; //rather damp in here no?
+
+
 })
 
 //let current=0;
