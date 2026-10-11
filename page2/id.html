@@ -34,35 +34,6 @@
             <section id="seld">
                 <h4>Do you treasure a table? get some treasure to hold your treasure on our treasure table, table attachment!!</h4>
                 
-                <section id="worktop">
-                <h2>the real gold</h2>
-                <p>get your files, adjust them to your liking </p>
-                <div id="work"></div>
-                <div id="fill">
-                    <label for="fill">Infill Density</label>
-                    <h3 id="ival">15%</h3>
-                    <input type="range" id="infil"
-                    min="10" max="50" step="5" value="15">
-                    <div id="inmark">
-                        <span>10%</span>
-                        <span>15%</span>
-                        <span>30%</span>
-                        <span>50%</span>
-                    </div>
-                    <div id="stats">
-                        <div class="stat">
-                            <p>Fillament Weight</p>
-                            <h3 id="workweight">0.00 g</h3>
-                        </div>
-                        <div class="stat">
-                            <p>Print Time</p>
-                            <h3 id="worktime">00:00:00</h3>
-                        </div>
-                    </div>
-                    <p id="note">select your components below to calculate the cost of your build(not money, well acc filament but just filament and time no money)</p>
-                </div>
-            </section>
-            
                 <div id="gallery">
 
                     <div class="item">
@@ -133,7 +104,34 @@
                             <button class="plus">+</button>
                         </div>
                     </div>
-
+                    <div class="item">
+                        <div class="model" data-model="OBJ/cableClipScrew.obj">
+                        </div>
+                        <h6><strong>Cable Clip Screw</strong></h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="52">
+                        </label>
+                        <p>52g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="model" data-model="OBJ/cableClipScrewSingle.obj">
+                        </div>
+                        <h6><strong>Cable Clip Screw Single</strong></h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="52">
+                        </label>
+                        <p>52g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
                     <div class="item">
                         <div class="model" data-model="OBJ/flangeHanger.obj">
                         </div>
@@ -160,7 +158,33 @@
                             <span class="qty">1</span>
                             <button class="plus">+</button>
                         </div>
-                    </div>    
+                    </div>  
+                    <div class="item">
+                        <div class="model" data-model="OBJ/dowelGripBolt.obj"></div>
+                        <h6><strong>Dowel Grip Bolt</strong></h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="30">
+                        </label>
+                        <p>30g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>  
+                    <div class="item">
+                        <div class="model" data-model="OBJ/dowelGripNut.obj"></div>
+                        <h6><strong>Dowel Grip Nut</strong></h6>
+                        <label>
+                            <input type="checkbox" class="select" data-weight="30">
+                        </label>
+                        <p>30g</p>
+                        <div class="quantity">
+                            <button class="minus">-</button>
+                            <span class="qty">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>                       
                     <div class="item">
                         <div class="model" data-model="OBJ/draw.obj"></div>
                         <h6><strong>Draw?</strong></h6>
@@ -305,19 +329,41 @@
                                 <span class="qty">1</span>
                             <button class="plus">+</button>
                         </div>
-                        </div>  
-                    </div>  
+                    </div>
+                    
                 </div>  
-                <div id="tools">
-                    <button id="add">Find weight!!</button>  
-                    <button id="less">less</button>     
-                    <div id="scr">
-                        <h4>your components</h4>
-                        <div id="list"></div>
-                        <p id="ncomp">0 components</p>
-                        <p id="total">total: 0g</p>
+                <section id="worktop">
+                    <h2>the real gold</h2>
+                    <p>get your files, adjust them to your liking </p>
+                    <div id="work"></div>
+                    <div id="fill">
+                        <label for="infil" >Infill Density</label>
+                        <h3 id="ival">15%</h3>
+                        <select id="infil">
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="30">30%</option>
+                            <option value="50">50%</option>
+                        </select>
+                        <div id="inmark">
+                            <span>10%</span>
+                            <span>15%</span>
+                            <span>30%</span>
+                            <span>50%</span>
+                        </div>
+                        <div id="stats">
+                            <div class="stat">
+                                <p>Fillament Weight</p>
+                                <h3 id="workweight">0.00 g</h3>
+                            </div>
+                            <div class="stat">
+                                <p>Print Time</p>
+                                <h3 id="worktime">00:00:00</h3>
+                            </div>
+                        </div>
+                        <p id="note">select your components above to calculate the cost of your build(not money, well acc filament but just filament and time no money)</p>
                     </div>   
-                </div>   
+                </section> 
             </section>
         </main>
         <footer>
