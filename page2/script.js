@@ -108,8 +108,53 @@ let printdata={
         50:{}
     }, 
     phoneStandCharger:{
-        10:{}
-    } screenTopMount sdHolder snapFit speakerMount tabletStand topPlate verticalStand 
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    screenTopMount:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    sdHolder:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    snapFit:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    speakerMount:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    tabletStand:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    topPlate:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    verticalStand:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    } 
 }
 //fih timee
 let wh=document.getElementById("wave");
