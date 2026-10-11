@@ -140,7 +140,24 @@ items.forEach(function(item){
     });
 });
 
-
+document.querySelectorAll(".model[data-model]").forEach(box=>{
+    const sce= new THREE.Scene();
+    const lca = new THREE.PrespectiveCamera(45,1,0.5,100); //lca stands for lights camera action i can do these now bc i dont have to worrry tm abt getting first time logic wrong
+    const render= new THREE.WebGLRenderer({
+        alpha:true,
+        antialias:false
+    });
+    render.setPixelRatio(1);
+    render.setSize(box.clientWidth,box.clientHeight);
+    box.appendChild(render.domElement);
+    sce.add(new THREE.HemisphereLight(0xffffff, 0x604020, 3));
+    const load= new OBJLoader();
+    const pivot=new THREE.Group();
+    sce.add(pivot);
+    load.load(box.dataset.model.trim(),obj=>{
+        
+    })
+})
 
 //let current=0;
 //let its=document.querySelectorAll(".item");
