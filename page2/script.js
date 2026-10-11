@@ -141,7 +141,9 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
     renderer.setSize(box.clientWidth,box.clientHeight);
     box.appendChild(renderer.domElement);
     scene.add(new THREE.HemisphereLight(0xffffff,0x604020,3)); //let the light in ig , idk why  im making sm notes , probs practicing for my nea
-    const loader=new OBJLoader();
+    const loader=new OBJLoader();        
+    const pivot = new THREE.Group();
+    scene.add(pivot);
     loader.load(box.dataset.model,obj=>{
         obj.traverse(part=>{
             if(part.isMesh){
@@ -150,21 +152,21 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
                 });
             }
         });
-        const bounds= new THREE.Box3().setFromObject(obj);
-        const size =bounds.getSize(new THREE.Vector3());
-        const centre =bounds.getCenter(new THREE.Vector3());
+        const bounds=new THREE.Box3().setFromObject(obj);
+        const centre=bounds.getCenter(new THREE.Vector3());
         obj.position.sub(centre);
-        obj.position.y-=0.2;
-        obj.scale.setScalar(2/Math.max(size.x,size.y,size.z));
-        scene.add(obj);
-        camera.position.set(3,2,4);
-        camera.lookAt(0,5,0);
+        obj.position.x += 1.5;
+        pivot.add(obj);
+        camera.position.set(3, 2, 4);
+        camera.lookAt(0, 0, 0);
+        controls.target.set(0, 0, 0);
+
     },undefined,error=>console.error(error));
     const controls=new OrbitControls(camera,renderer.domElement);
     controls.minPolarAngle=0.3;
-    controls.maxPolarAngle=Math.PI/2;
-    controls.minDistance=1;
-    controls.maxDistance=1; //dont disapearrr
+    controls.maxPolarAngle=Math.PI/2; 
+    controls.minDistance = 30;
+    controls.maxDistance = 50;//dont disapearrr
     controls.enableDamping=true;
     controls.autoRotate=true;
     controls.autoRotateSpeed=2;
@@ -172,6 +174,7 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
         requestAnimationFrame(animate);
         renderer.render(scene,camera);
         controls.update();
+        pivot.rotation.y+=0.01;
     }
     animate();
 });
