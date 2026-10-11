@@ -308,3 +308,27 @@ button{
 .qty{
     font-size: 25px;
 }
+.stat h3{
+    margin: 0;
+    font-family: "Jacquard 24", serif;
+    font-size: 30px;
+    overflow-wrap: anywhere;
+}
+#note{
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+#worktop{
+    position: relative;
+    margin: 70px auto;
+    padding: 35px;
+    width: 85%;
+    background: #e3caab;
+    color: #2d1902;
+    border: 4px double #a66b38;
+    outline: 2px solid #2d1902;
+    outline-offset: 4px;
+    box-shadow: 0 0 20px #2d1902;
+    box-sizing: border-box;
+}
