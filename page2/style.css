@@ -392,3 +392,15 @@ button{
     font-size: 14px;
     text-transform: uppercase;
 }
+@media(max-width:500px){
+    #worktop{
+        width: 90%;
+        padding: 20px 14px;
+    }
+    #fill{
+        padding: 16px 12px;
+    }
+    #stats{
+        grid-template-columns: 1fr;
+    }
+}
