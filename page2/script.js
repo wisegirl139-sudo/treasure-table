@@ -177,6 +177,24 @@ function updateWeights(){
 infil.value="10";
 updateWeights();
 infil.addEventListener("change",updateWeights);
+document.querySelectorAll(".select").forEach(function(s){
+    s.addEventListener("change",updateWeights);
+});
+function updateToatl(){
+    let per=infil.value;
+    let weight= 0;
+    let seconds = 0;
+    document.querySelectorAll(".item").forEach(function(item){
+        let check = item.querySelector(".select");
+        if(check.checked){
+            let part=item.dataset.part;
+            let data = printdata[part][per];
+            let qty =Number(item.querySelector(".qty").textContent);
+            weight+=data.weight*qty;
+            
+        }
+    })
+}
 //fih timee
 let wh=document.getElementById("wave");
 let img=wh.querySelector("img");
