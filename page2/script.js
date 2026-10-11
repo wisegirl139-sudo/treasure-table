@@ -177,9 +177,7 @@ function updateWeights(){
 infil.value="10";
 updateWeights();
 infil.addEventListener("change",updateWeights);
-document.querySelectorAll(".select").forEach(function(s){
-    s.addEventListener("change",updateWeights);
-});
+
 function updateToatl(){
     let per=infil.value;
     let weight= 0;
@@ -191,10 +189,26 @@ function updateToatl(){
             let data = printdata[part][per];
             let qty =Number(item.querySelector(".qty").textContent);
             weight+=data.weight*qty;
-            
+            let time= data.time.split(":");
+            seconds+=(Number(time[0])*3600+Number(time[1])*60+Number(time[2]))*qty
         }
-    })
+    });
+    document.getElementById("workweight").textContent=weight.toFixed(2)+"g";
+    let hr=Math.floor(seconds/3600);
+    let min=Math.floor((seconds%3600)/60);
+    let sec=seconds%60;
+    document.getElementById("worktime").textContent=String(hr).padStart(2,"0")+":"
+    +String(min).padStart(2,"0")+":"+
+    String(sec).padStart(2,"0");
 }
+document.querySelectorAll(".select").forEach(function(s){
+    s.addEventListener("change",function(){
+        updateWeights();
+        updateToatl();
+    });
+});
+infil.addEventListener("change",updateToatl);
+updateToatl();
 //fih timee
 let wh=document.getElementById("wave");
 let img=wh.querySelector("img");
@@ -259,13 +273,15 @@ items.forEach(function(item){
         let num=Number(qty.textContent);
         num++;
         qty.textContent=num;
+        updateToatl();
     });
     minus.addEventListener("click",function(){
         let num =Number(qty.textContent);
         if(num>1){
             num--;
         }
-        qty.textContent=num
+        qty.textContent=num;
+        updateToatl();
     });
 });
 

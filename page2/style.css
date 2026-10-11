@@ -172,24 +172,7 @@ button{
     align-items: center;
     gap: 15px;
     margin: 30px auto;
-    flex-direction: column
-    ;
-}
-#scr{
-    display: none;
-    position: relative;
-    z-index: 10;
-    width: 500px;
-    max-width: 60vw;
-    background-image: url(scroll.png);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    padding: 130px 70px;
-    color: #2d1902;
-    text-align: center;
-
+    flex-direction: column;
 }
 #list p{
     margin: 0 auto;
