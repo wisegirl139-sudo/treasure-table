@@ -159,11 +159,12 @@ let printdata={
 let infil=document.getElementById("infil");
 function updateWeights(){
     let per=infil.value;
+    document.getElementById("ival").textContent=per+"%";
     document.querySelectorAll(".item[data-part]").forEach(function(item){
         let part =item.dataset.part;
         let data=printdata[part];
         if(!data||!data[per]){
-            console.log("missing data for" , part,percent);//precautions andwarnings are very very important
+            console.log("missing data for" , part,per);//precautions andwarnings are very very important
             return;
         }
         let weight=data[per].weight;
