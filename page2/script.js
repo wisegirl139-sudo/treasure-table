@@ -142,7 +142,8 @@ items.forEach(function(item){
 document.querySelectorAll(".model[data-model]").forEach(box=>{
     const scene= new THREE.Scene();
     const camera=new THREE.PerspectiveCamera(45,1,0.3,1000);//pov youre a cable clip (2020 flashbacks)
-    const renderer=new THREE.WebGLRenderer({alpha:true, antialias:true}); //js just has some of the best libraries honestly like three p5 even media pipe i think
+    const renderer=new THREE.WebGLRenderer({alpha:true, antialias:false}); //js just has some of the best libraries honestly like three p5 even media pipe i think
+    renderer.setPixelRatio(1);
     renderer.setSize(box.clientWidth,box.clientHeight);
     box.appendChild(renderer.domElement);
     scene.add(new THREE.HemisphereLight(0xffffff,0x604020,3)); //let the light in ig , idk why  im making sm notes , probs practicing for my nea
@@ -158,6 +159,8 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
             }
         });
         const bounds=new THREE.Box3().setFromObject(obj);
+        const size= bounds.getSize(new THREE.Vector3());
+        const maxsize=Math.max(size.x,size.y,size.z);
         const centre=bounds.getCenter(new THREE.Vector3());
         obj.position.sub(centre);
         obj.position.x += 1.5;
