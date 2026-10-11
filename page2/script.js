@@ -139,57 +139,6 @@ items.forEach(function(item){
         qty.textContent=num
     });
 });
-document.querySelectorAll(".model[data-model]").forEach(box=>{
-    const scene= new THREE.Scene();
-    const camera=new THREE.PerspectiveCamera(45,1,0.3,1000);//pov youre a cable clip (2020 flashbacks)
-    const renderer=new THREE.WebGLRenderer({alpha:true, antialias:false}); //js just has some of the best libraries honestly like three p5 even media pipe i think
-    renderer.setPixelRatio(1);
-    renderer.setSize(box.clientWidth,box.clientHeight);
-    box.appendChild(renderer.domElement);
-    scene.add(new THREE.HemisphereLight(0xffffff,0x604020,3)); //let the light in ig , idk why  im making sm notes , probs practicing for my nea
-    const loader=new OBJLoader();        
-    const pivot = new THREE.Group();
-    scene.add(pivot);
-    loader.load(box.dataset.model,obj=>{
-        obj.traverse(part=>{
-            if(part.isMesh){
-                part.material=new THREE.MeshStandardMaterial({
-                    color:0xa66b38
-                });
-            }
-        });
-        const bounds=new THREE.Box3().setFromObject(obj);
-        const size= bounds.getSize(new THREE.Vector3());
-        const maxsize=Math.max(size.x,size.y,size.z);
-        
-        if(!maxsize) return;
-        const newbounds=new THREE.Box3().setFromObject(obj);
-        const centre= newbounds.getCenter(new THREE.Vector3());
-        obj.scale.setScalar(1.5/maxsize);
-        obj.position.sub(centre);
-        obj.position.x += 1.5;
-        pivot.add(obj);
-
-    },undefined,error=>console.error(error));
-    const controls=new OrbitControls(camera,renderer.domElement);
-    controls.minPolarAngle=0.3;
-    controls.maxPolarAngle=Math.PI/2; 
-    controls.minDistance = 30;
-    controls.maxDistance = 50;//dont disapearrr
-    controls.enableDamping=true;
-    controls.autoRotate=true;
-    controls.autoRotateSpeed=5;
-    function animate(){
-        requestAnimationFrame(animate);
-        renderer.render(scene,camera);
-        controls.update();
-        pivot.rotation.y+=0.01;
-    }
-    animate();
-});
-const box =document.querySelector(".model");
-console.log(box.dataset.model);
-
 
 
 
