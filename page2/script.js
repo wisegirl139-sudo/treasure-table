@@ -77,7 +77,7 @@ let fw=45;
 let gx=90;
 let gy=75;
 let ft=["1.png","2.png","3.png"];
-img.addEventListener("load",function(){
+function fishies(){
     let ww=img.offsetWidth;
     let hh=img.offsetHeight;
     for(let y=100; y<hh-50;y+=gy){
@@ -102,7 +102,12 @@ img.addEventListener("load",function(){
         }
     }
     swim();
-});
+};
+if(img.complete&&img.naturalWidth>0){
+    fishies();
+}else{
+    img.addEventListener("load",fishies,{once:true});
+}
 //fishies move
 
 function swim(){
@@ -169,7 +174,7 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
     controls.maxDistance = 50;//dont disapearrr
     controls.enableDamping=true;
     controls.autoRotate=true;
-    controls.autoRotateSpeed=2;
+    controls.autoRotateSpeed=5;
     function animate(){
         requestAnimationFrame(animate);
         renderer.render(scene,camera);
