@@ -162,6 +162,10 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
         camera.lookAt(0,0,0);
     },undefined,error=>console.error(error));
     const controls=new OrbitControls(camera,renderer.domElement);
+    controls.minPolarAngle=0.3;
+    controls.maxPolarAngle=Math.PI/2;
+    controls.minDistance=3;
+    controls.maxDistance=6; //dont disapearrr
     controls.enableDamping=true;
     controls.autoRotate=true;
     controls.autoRotateSpeed=2;
