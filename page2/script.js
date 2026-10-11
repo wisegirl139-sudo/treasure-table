@@ -142,7 +142,7 @@ items.forEach(function(item){
 
 document.querySelectorAll(".model[data-model]").forEach(box=>{
     const sce= new THREE.Scene();
-    const lca = new THREE.PrespectiveCamera(45,1,0.5,100); //lca stands for lights camera action i can do these now bc i dont have to worrry tm abt getting first time logic wrong
+    const lca = new THREE.PerspectiveCamera(45,1,0.5,100); //lca stands for lights camera action i can do these now bc i dont have to worrry tm abt getting first time logic wrong
     const render= new THREE.WebGLRenderer({
         alpha:true,
         antialias:false
@@ -162,7 +162,7 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
                 });
             }
         });
-        const bounds= new THREE.Box3ox3().setFromObject(obj);//done this section like 10 times omg overall(not even a hyperbole) 
+        const bounds= new THREE.Box3().setFromObject(obj);//done this section like 10 times omg overall(not even a hyperbole) 
         const size= bounds.getSize(new THREE.Vector3());
         const maxsize=Math.max(size.x,size.y,size.z);
         if(!maxsize||!Number.isFinite(maxsize)) return;
@@ -173,19 +173,35 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
         pivot.add(obj);
         lca.position.set(3,2,4);
         lca.lookAt(0,0,0);
-        controls.target.set(0,0,0);
+        
     },undefined,error => {
         console.error("Model failed:",box.dataset.model,error);
     });
-    const controls= new OrbitControls(camera,render.domElement);
+    const controls= new OrbitControls(lca,render.domElement);
     controls.minPolarAngle=0.3;
+    controls.target.set(0,0,0);
     controls.maxPolarAngle=Math.PI/2;
     controls.minDistance=2;
     controls.maxDistance=10;
     controls.enableDamping=true; //rather damp in here no?
+    controls.autoRotate=false;
+    //animating time!!!!
+    function animate(){
+        requestAnimationFrame(animate);
+        const wid= box.clientWidth;
+        const hei= box.clientHeight;
+        if(wid>0&&hei>0){
+            render.setSize(wid,hei,false);
+            lca.aspect=wid/hei;
+            lca.updateProjectionMatrix(); //bet you cant escape the matrix
+            pivot.rotation.y+=0.01;
+            controls.update();
+            render.render(sce,lca);
+        }
+    }
+    animate();
 
-
-})
+});
 
 //let current=0;
 //let its=document.querySelectorAll(".item");
