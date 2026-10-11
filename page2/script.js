@@ -22,50 +22,26 @@ window.addEventListener("scroll",function(){
 });
 
 //TOTAL cinema( ik its absolute but wtv wtv)
-let less=document.getElementById("less")
-let but=document.getElementById("add");
-let scr=document.getElementById("scr");
-let lis=document.getElementById("list");
-let nco=document.getElementById("ncomp");
-let sel=document.querySelectorAll(".select");
-let tot=document.getElementById("total");
-sel.forEach(function(s){
-    s.addEventListener("change",function(){
-        let item=s.closest(".item");
-        if(s.checked){
-            item.style.transform="translateY(-10px)";
-            item.style.boxShadow="18px 18px 0 #2d1902, inset 0 0 0 3px #a66b38";
-        }
-        else{
-            item.style.transform="translateY(0)";
-            item.style.boxShadow="6px 6px 0 #2d1902, inset 0 0 0 3px #a66b38";
-        }
-    });
-});
-but.addEventListener("click",function(){
-    let num=0;
-    let count = 0;
-    lis.innerHTML="";
-    sel.forEach(function(sels){
-
-        if(sels.checked){            
-            let item=sels.closest(".item");
-            let qty=Number(item.querySelector(".qty").textContent);
-            let p=document.createElement("p");
-            p.textContent="component"+(count+1)+"x"+qty+"="+Number(sels.dataset.weight)*qty+"g";
-            lis.appendChild(p);
-
-            num+=Number(sels.dataset.weight)*qty;
-            count++;
-        }
-    });
-    nco.textContent=count+"components";
-    tot.textContent="total:"+num+"g";
-    scr.style.display="block";
-});
-less.addEventListener("click",function(){
-    scr.style.display="none";
-})
+let printdata={
+    cableClip:{
+        10:{weight:7.34 ,time:"00:23:17"},
+        15:{weight:7.76,time:"00:23:56"},
+        30:{weight:8.85 ,time:"00:27:10"},
+        50:{weight:10.2 , time:"00:32:37"}
+    },
+    cableClipScrew:{
+        10:{ weight:1.87, time:"00:13:27"},
+        15:{weight:1.88, time:"00:13:27"},
+        30:{weight:1.88, time:"00:13:27"},
+        50:{weight:1.88, time:"00:13:27"}
+    },
+    cupHolder:{
+        10:{ weight:1.87, time:"00:13:27"},
+        15:{weight:1.88, time:"00:13:27"},
+        30:{weight:1.88, time:"00:13:27"},
+        50:{weight:1.88, time:"00:13:27"}
+    }
+}
 //fih timee
 let wh=document.getElementById("wave");
 let img=wh.querySelector("img");
