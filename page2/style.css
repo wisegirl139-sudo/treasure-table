@@ -324,11 +324,71 @@ button{
     margin: 70px auto;
     padding: 35px;
     width: 85%;
-    background: #e3caab;
+    background: #a87532;
     color: #2d1902;
     border: 4px double #a66b38;
     outline: 2px solid #2d1902;
     outline-offset: 4px;
     box-shadow: 0 0 20px #2d1902;
     box-sizing: border-box;
+}
+#worktop h2{
+    font-family: "Jacquard 24",serif;
+    font-size: 52px;
+    text-align: center;
+    margin: 0 0 8px;
+}
+#worktop p{
+    font-family: "Cormorant Unicase",serif;
+}
+#fill{
+    margin-top: 30px;
+    padding: 25px;
+    border:  1px solid #a66b38;
+    background: #b98220;
+}
+#fill label{
+    font-family: "Cormorant Unicase",serif;
+    font-weight: 700;
+}
+#infil{
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    background: #e3caab;
+    color: #2d1902;
+    border:  2px solid #2d1902;
+    font: inherit;
+    cursor: pointer;
+}
+#inmark{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+}
+#ival{
+    display: inline-block;
+    margin: 10px 0;
+    font-family: "Jacquard 24", serif;
+    font-size: 30px;
+}
+#stats{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+.stat{
+    padding: 18px 10px;
+    text-align: center;
+    border: 2px solid #7a5425;
+    background: #e3b84b;
+    min-height: 0;
+}
+.stat p{
+    margin: 0 0 12px;
+    font-size: 14px;
+    text-transform: uppercase;
 }
