@@ -161,13 +161,14 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
         const bounds=new THREE.Box3().setFromObject(obj);
         const size= bounds.getSize(new THREE.Vector3());
         const maxsize=Math.max(size.x,size.y,size.z);
-        const centre=bounds.getCenter(new THREE.Vector3());
+        
+        if(!maxsize) return;
+        const newbounds=new THREE.Box3().setFromObject(obj);
+        const centre= newbounds.getCenter(new THREE.Vector3());
+        obj.scale.setScalar(1.5/maxsize);
         obj.position.sub(centre);
         obj.position.x += 1.5;
         pivot.add(obj);
-        camera.position.set(3, 2, 4);
-        camera.lookAt(0, 0, 0);
-        controls.target.set(0, 0, 0);
 
     },undefined,error=>console.error(error));
     const controls=new OrbitControls(camera,renderer.domElement);
