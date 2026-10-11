@@ -156,6 +156,26 @@ let printdata={
         50:{weight:116.52,time:"06:07:00"}
     } 
 }
+let infil=document.getElementById("infil");
+function updateWeights(){
+    let per=infil.value;
+    document.querySelectorAll(".item[data-part]").forEach(function(item){
+        let part =item.dataset.part;
+        let data=printdata[part];
+        if(!data||!data[per]){
+            console.log("missing data for" , part,percent);//precautions andwarnings are very very important
+            return;
+        }
+        let weight=data[per].weight;
+        let p=item.querySelector(".weight");
+        if(p){
+            p.textContent=weight+"g";
+        }
+    });
+}
+infil.value="10";
+updateWeights();
+infil.addEventListener("change",updateWeights);
 //fih timee
 let wh=document.getElementById("wave");
 let img=wh.querySelector("img");
