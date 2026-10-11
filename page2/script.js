@@ -30,17 +30,86 @@ let printdata={
         50:{weight:10.2 , time:"00:32:37"}
     },
     cableClipScrew:{
-        10:{ weight:1.87, time:"00:13:27"},
+        10:{weight:1.87, time:"00:13:27"},
         15:{weight:1.88, time:"00:13:27"},
         30:{weight:1.88, time:"00:13:27"},
         50:{weight:1.88, time:"00:13:27"}
     },
+    cableClipScrewSingle:{
+        10:{weight:0.68, time:"00:05:20"},
+        15:{weight:0.68, time:"00:05:20"},
+        30:{weight:0.68, time:"00:05:20"},
+        50:{weight:0.68, time:"00:05:20"}
+    },
     cupHolder:{
-        10:{ weight:1.87, time:"00:13:27"},
-        15:{weight:1.88, time:"00:13:27"},
-        30:{weight:1.88, time:"00:13:27"},
-        50:{weight:1.88, time:"00:13:27"}
-    }
+        10:{weight:106.41, time:"05:06:00"},
+        15:{weight:117.23, time:"00:05:50"},
+        30:{weight:149, time:"00:08:30"},
+        50:{weight:191.12, time:" 00:11:56"}
+    },
+    dowelGrip:{
+        10:{weight:4.86,time:"00:20:32"},
+        15:{weight:4.97, time:"00:20:51"},
+        30:{weight:5.33, time:"00:22:31"},
+        50:{weight:5.78, time:"00:24:38"}    
+    },
+    dowelGripBolt :{
+        10:{weight:2.88,time:"00:16:15"},
+        15:{weight:2.90,time:"00:16:23"},
+        30:{weight:3.00,time:"00:16:46"},
+        50:{weight:3.10,time:"00:17:29"}    
+    },
+    dowelGripNut:{
+        10:{weight:2.51,time:"00:12:54"},
+        15:{weight:2.59,time:"00:12:56"},
+        30:{weight:2.87,time:"00:13:18"},
+        50:{weight:3.19,time:"00:13:50"}    
+    },
+    draw :{
+        10:{weight:359.15,time:"10:15:00"},
+        15:{weight:379.53,time:"11:37:00"},
+        30:{weight:447.66,time:"16:38:00"},
+        50:{weight:530.69,time:"22:42:00"}    
+    },
+    flangeHanger :{
+        10:{weight:51.28,time:"02:13:00"},
+        15:{weight:58.35,time:"02:28:00"},
+        30:{weight:79.21,time:"03:55:00"},
+        50:{weight:105.85,time:"06:04:00"}    
+    },
+    headphoneAmpMount :{
+        10:{weight:68.75,time:"02:21:00"},
+        15:{weight:74.51,time:"02:42:00"},
+        30:{weight:92.00,time:"03:58:00"},
+        50:{weight:112.34,time:"05:30:00"}    
+    },
+    headphoneClamp :{
+        10:{weight:101.03,time:"04:40:00"},
+        15:{weight:113.98,time:"05:04:00"},
+        30:{weight:151.29,time:"07:08:00"},
+        50:{weight:199.59,time:"10:24:00"}    
+    },
+    laptopMount:{
+        10:{weight:445.55,time:"15:51:00"},
+        15:{weight:499.12,time:"19:13:00"},
+        30:{weight:659.20,time:"31:38:00"},
+        50:{weight:863.56,time:"47:56:00"}    
+    },
+    micClip:{
+        10:{weight:13.43,time:"00:57:28"},
+        15:{weight:13.57,time:"00:57:54"},
+        30:{weight:14.21,time:"01:00:00"},
+        50:{weight:14.81,time:"01:04:00"}    
+    },
+    penHolder:{
+        10:{},
+        15:{},
+        30:{},
+        50:{}
+    }, 
+    phoneStandCharger:{
+        10:{}
+    } screenTopMount sdHolder snapFit speakerMount tabletStand topPlate verticalStand 
 }
 //fih timee
 let wh=document.getElementById("wave");
