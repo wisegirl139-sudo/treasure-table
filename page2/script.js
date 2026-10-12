@@ -357,7 +357,7 @@ function downloadFiles(ext){
         if(check.checked){
             let part = item.dataset.part;
             let link=document.createElement("a");
-            link.href="printable/"+part+"."+ext;
+            link.href=ext.toUpperCase()+"/"+part+"."+ext;
             link.download=part+"."+ext;
             document.body.appendChild(link);
             link.click();
@@ -366,8 +366,13 @@ function downloadFiles(ext){
         }
     });
     if(!found){document.getElementById("note").textContent="select some items before downloading";}
-
 }
+downs.addEventListener("click",function(){
+    downloadFiles("step");
+});
+down.addEventListener("click",function(){
+    downloadFiles("3mf");
+})
 //let current=0;
 //let its=document.querySelectorAll(".item");
 //document.addEventListener("keydown",function(e){
