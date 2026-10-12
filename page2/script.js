@@ -347,7 +347,27 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
     animate();
 
 });
+//zip up hoodies are sm better than non zip ups
+let downs=document.getElementById("downs");
+let down=document.getElementById("down");
+function downloadFiles(ext){
+    let found=false;
+    document.querySelectorAll(".item").forEach(function(item){
+        let check=item.querySelector(".select");
+        if(check.checked){
+            let part = item.dataset.part;
+            let link=document.createElement("a");
+            link.href="printable/"+part+"."+ext;
+            link.download=part+"."+ext;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            found=true;
+        }
+    });
+    if(!found){document.getElementById("note").textContent="select some items before downloading";}
 
+}
 //let current=0;
 //let its=document.querySelectorAll(".item");
 //document.addEventListener("keydown",function(e){
