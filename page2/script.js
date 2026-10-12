@@ -348,31 +348,60 @@ document.querySelectorAll(".model[data-model]").forEach(box=>{
 
 });
 //zip up hoodies are sm better than non zip ups
-let downs=document.getElementById("downs");
-let down=document.getElementById("down");
-function downloadFiles(ext){
-    let found=false;
+async function downloadZip(ext){
+    let zip= new JSZip();
+    let count=0;
     document.querySelectorAll(".item").forEach(function(item){
-        let check=item.querySelector(".select");
+        let check =item.querySelector(".select");
         if(check.checked){
-            let part = item.dataset.part;
-            let link=document.createElement("a");
-            link.href=ext.toUpperCase()+"/"+part+"."+ext;
-            link.download=part+"."+ext;
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-            found=true;
+            count++;
         }
     });
-    if(!found){document.getElementById("note").textContent="select some items before downloading";}
+    if(count==0){
+        document.getElementById("note").textContent="select some items before downloading";
+        return;
+    }
+    try{
+        let jobs=[]; //now im not steve jobs but thats one heck of a job
+        document.querySelectorAll(".item").forEach(function(item){
+            let check=item.querySelector(".select");
+            if(check.checked){
+                let part=item.dataset.part;
+                let path=ext.toUpperCase()+"/"+part+"."+ext;
+                jobs.push(
+                    fetch(path).then(function(response){
+                        if(!response.ok){
+                            throw new Error("missing file:"+path); //precautions are very nice
+                        }
+                        return response.blob();//blob
+                    }).then(function(file){
+                        zip.file(part+"."+ext,file);
+                    })
+                );
+            }
+        });
+        await Promise.all(jobs);
+        let blob=await zip.generateAsync({type:"blob"});
+        let url=URL.createObjectURL(blob);
+        let link=document.createElement("a");
+        link.href=url;
+        link.download="treasure-table-"+ext+".zip";
+        link.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("note").textContent="zip is readyyyy";
+    } catch(error){
+        document.getElementById("note").textContent="file not found";
+        console.error(error);//precautionssssssssssssssss
+    }
+    
 }
-downs.addEventListener("click",function(){
-    downloadFiles("step");
+document.getElementById("downs").addEventListener("click",function(){
+    downloadZip("step");
 });
-down.addEventListener("click",function(){
-    downloadFiles("3mf");
-})
+document.getElementById("down").addEventListener("click",function(){
+    downloadZip("3mf");
+});
+
 //let current=0;
 //let its=document.querySelectorAll(".item");
 //document.addEventListener("keydown",function(e){
