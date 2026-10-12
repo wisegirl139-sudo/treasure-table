@@ -401,24 +401,16 @@ document.getElementById("downs").addEventListener("click",function(){
 document.getElementById("down").addEventListener("click",function(){
     downloadZip("3mf");
 });
-
-//let current=0;
-//let its=document.querySelectorAll(".item");
-//document.addEventListener("keydown",function(e){
-    //if(e.key=="ArrowRight"){
-      //  current++;
-        //if(current>=its.length){
-          //  current=0;
-        //}
-    //}
-    //if(e.key=="ArrowLeft"){
-      //  current--;
-        //if(current<0){
-          //  current=its.length-1;
-        //}
-    //}
-    //its.forEach(function(item){
-      //  item.style.transform="translateY(0)";
-        //item.style.boxShadow="6px 6px 0 #2d1902"
-    //})
-//})
+//making m compatible
+document.addEventListener("keydown",function(e){
+    if(e.key.toLowerCase()=="m"){
+        document.elementFromPoint(
+            window.mouseX,
+            window.mouseY
+        )?.click();
+    }
+});
+document.addEventListener("mousemove",function(e){
+    window.mouseX=e.clientX;
+    window.mouseY=e.clientY;
+});
