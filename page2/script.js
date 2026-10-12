@@ -418,16 +418,16 @@ document.addEventListener("keydown",function(e){
     if(e.repeat) return;
     if(e.key.toLowerCase()==="q"){
         e.preventDefault();
-        document.dispatchEvent(new KeyboardEvent("keydown",{
-            key:"ArrowLeft",
-            bubbles:true
-        }));
+        document.getElementById("gallery").scrollBy({
+            left:-300,
+            behavior:"smooth"
+        });
     }
     if(e.key.toLowerCase()==="k"){
         e.preventDefault();
-        document.dispatchEvent(new KeyboardEvent("keydown",{
-            key:"ArrowRight",
-            bubbles:true
-        }));
+        document.getElementById("gallery").scrollBy({
+            left:300,
+            behavior:"smooth"
+        });
     }
 });
