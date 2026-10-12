@@ -413,4 +413,18 @@ document.addEventListener("keydown",function(e){
 document.addEventListener("mousemove",function(e){
     window.mouseX=e.clientX;
     window.mouseY=e.clientY;
+});//i was gonna give up on teh idea but if weve alr doen m lets do k and q
+document.addEventListener("keydown",function(e){
+    if(e.key.toLowerCase()==="q"){
+        document.dispatchEvent(new KeyboardEvent("keydown",{
+            key:"ArrowLeft",
+            bubbles:true
+        }));
+    }
+    if(e.key.toLowerCase()==="k"){
+        document.dispatchEvent(new KeyboardEvent("keydown",{
+            key:"ArrowRight",
+            bubbles:true
+        }));
+    }
 });
